@@ -4,20 +4,20 @@ public class Main {
     public static void main(String[] args) {
         double a[] = parse(args);
         bubble(a);
-        for (int i = 0; i < a.length; i++)
-            System.out.print(a[i]+" ");
+        for (double i : a)
+            System.out.print(i + " ");
         System.out.println();
     }
 
-    public static boolean bubble(double arr[]) {
+    public static void bubble(double arr[]) {
         boolean swapped = true;
         int j = 0;
-        double tmp;
         while (swapped) {
             swapped = false;
             j++;
             for (int i = 0; i < arr.length - j; i++) {
                 if (arr[i] > arr[i + 1]) {
+                    double tmp;
                     tmp = arr[i];
                     arr[i] = arr[i + 1];
                     arr[i + 1] = tmp;
@@ -25,7 +25,6 @@ public class Main {
                 }
             }
         }
-        return swapped;
     }
 
     private static double[] parse(String[] input) {
